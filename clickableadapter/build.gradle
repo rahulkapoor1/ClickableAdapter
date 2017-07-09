@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.rahulkapoor1'
 
 group = 'com.rasi.clickableadapter'
 version = '1.0.1'
@@ -23,29 +23,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-
-    task generateSourcesJar(type: Jar) {
-        from android.sourceSets.main.java.srcDirs
-        classifier 'sources'
-    }
-
-    task generateJavadocs(type: Javadoc) {
-        source = android.sourceSets.main.java.srcDirs
-        classpath += project.files(android.getBootClasspath()
-                .join(File.pathSeparator))
-    }
-
-    task generateJavadocsJar(type: Jar) {
-        from generateJavadocs.destinationDir
-        classifier 'javadoc'
-    }
-
-    generateJavadocsJar.dependsOn generateJavadocs
-
-    artifacts {
-        archives generateJavadocsJar
-        archives generateSourcesJar
     }
 }
 
