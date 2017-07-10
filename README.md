@@ -65,6 +65,12 @@ Now set values on View easily.
 
 Example files are added. Enjoy!
 =======
+
+Demo App
+=======
+Try App on online simulator, to check functionality.
+Here you go -  [Link of Simulator](https://appetize.io/app/ncqu89q9g0dur8nfmw7a9hn008?device=nexus5&scale=75&orientation=portrait&osVersion=7.0)
+
 MIT License
 =======
 Copyright 2017 Rasi Mobile
