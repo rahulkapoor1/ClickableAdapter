@@ -23,6 +23,48 @@ dependencies {
 	     }
 ```
 
+Usage
+=======
+Extend your adapter with ```BaseAdapter<CustomItem>```
+```java
+public class MyCustomAdapter extends BaseAdapter<CustomItem>
+```
+Return your View which is going to visible in ```RecyclerView```.
+```java
+@Override
+    protected int getItemView() {
+        // view id which is going to inflate
+        return R.layout.item_adapter;
+    }
+```
+List down your views which are going to display on UI with custom values.
+```java
+@Override
+    protected int[] getResIdOfInflatedViews() {
+        // id of views which are going to display on UI with custom values
+        return new int[]{R.id.tv_first_name, R.id.tv_last_name};
+    }
+```
+Now set values on View easily.
+```java
+@Override
+    public void onBindViewHolder(ClickableViewHolder holder, int position) {
+
+        // Get current item which is going to display on UI
+        final CustomItem item = getItem(position);
+
+        // Views mapping
+        final TextView tvFirstName = (TextView)holder.getViewById(R.id.tv_first_name);
+        final TextView tvLastName = (TextView)holder.getViewById(R.id.tv_last_name);
+
+        // Set values
+        tvFirstName.setText(item.getFirstName());
+        tvLastName.setText(item.getLastName());
+    }
+```
+
+Example files are added. Enjoy!
+=======
 MIT License
 =======
 Copyright 2017 Rasi Mobile
